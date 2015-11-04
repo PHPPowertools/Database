@@ -59,6 +59,9 @@ if ($data = $database
                  ->execute()) {
      var_dump($data);
 }
+
+// Disconnect from your database
+$database->disconnect();
 ```
 
 ##### Joining queries :
