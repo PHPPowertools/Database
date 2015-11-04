@@ -29,7 +29,8 @@ if ($data = $database->select(['numberofpersons' => ['count' => '*']])->from('pe
     var_dump($data);
 }
 
-// Get the first 10 users that do not have `John` as a first name and sort them by `firstname` descendingly.
+// Get the first 10 users that do not have `John` as a first name
+// and sort them by `firstname` descendingly.
 if ($data = $database
                  ->select()
                  ->from('user')
