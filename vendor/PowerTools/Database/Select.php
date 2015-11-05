@@ -23,8 +23,14 @@ class Database_Select extends Database_Query {
         return $this;
     }
 
+    public function distinct($distinct = true) {
+        $this->_distinct = $distinct;
+        return $this;
+    }
+
     public function __toString() {
-        return $this->type . $this->_get() . $this->_from() . $this->_where() . $this->_order() . $this->_limit();
+        $select = $this->_distinct ? $this->type . ' DISTINCT' : $this->type;
+        return $select . $this->_get() . $this->_from() . $this->_where() . $this->_order() . $this->_limit();
     }
 
     protected function _build($obj, $args) {
