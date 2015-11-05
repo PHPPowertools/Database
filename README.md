@@ -29,9 +29,12 @@ if ($data = $database->select()->from('user')->order('firstname')->execute()) {
     var_dump($data);
 }
 
-// Get the number of records found in the `person` table
+// Get the number of records found in the `person` table and the current time
 if ($data = $database
-                  ->select(['numberofpersons' => ['count' => '*']])
+                  ->select(
+                      ['persons' => ['count' => '*']],
+                      ['time' => ['now' => []]]
+                  )
                   ->from('person')
                   ->execute()) {
     var_dump($data);
@@ -45,6 +48,17 @@ if ($data = $database
                  ->where(['firstname' => ['<>' => 'John']])
                  ->order(['firstname' => 'DESC'])
                  ->limit(0, 10)
+                 ->execute()) {
+    var_dump($data);
+}
+
+// Get a list of users by their full name and profession
+if ($data = $database
+                 ->select(
+                     ['fullname' => ['concat' => ['firstname', ['string' => ' '], 'name']]],
+                     'profession'
+                 )
+                 ->from('contact')
                  ->execute()) {
     var_dump($data);
 }
