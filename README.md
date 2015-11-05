@@ -19,6 +19,11 @@ if ($data = $database->select()->from('contact')->execute()) {
     var_dump($data);
 }
 
+// Select all distinct rows from the `person` table
+if ($data = $database->select()->distinct()->from('person')->execute()) {
+    var_dump($data);
+}
+
 // Select all rows from the `user` table & sort by `firstname`
 if ($data = $database->select()->from('user')->order('firstname')->execute()) {
     var_dump($data);
@@ -65,6 +70,9 @@ if ($data = $database
 
 // Disconnect from your database
 $database->disconnect();
+
+// Print query "SELECT * FROM `person`"
+echo $database->select()->from('person');
 ```
 
 ##### Joining queries :
