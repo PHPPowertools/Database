@@ -17,6 +17,11 @@ class Database_Join extends Database_Select {
         return $this;
     }
 
+    public function distinct($distinct = true) {
+        $this->_distinct = $distinct;
+        return $this;
+    }
+
     public function getTablename($id = 0) {
         if ($this->fields[$id] instanceof Database_Join) {
             return $this->fields[$id]->getTablename(0);
@@ -130,7 +135,8 @@ class Database_Join extends Database_Select {
     }
 
     public function __toString() {
-        return 'SELECT' . $this->_get() . $this->_from() . $this->_where() . $this->_order() . $this->_limit();
+        $select = $this->_distinct ? 'SELECT DISTINCT' : 'SELECT';
+        return $select . $this->_get() . $this->_from() . $this->_where() . $this->_order() . $this->_limit();
     }
 
 }
