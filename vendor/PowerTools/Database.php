@@ -4,33 +4,18 @@ namespace PowerTools;
 
 class Database {
 
-    protected $_dbname;
-    protected $_hostname;
-    protected $_options;
     protected $_query;
-    public $_database;
+    protected $_database;
 
-    public static function factory($dbname, $host = 'localhost', $options = array()) {
-        return new static($dbname, $host, $options);
+    public static function factory() {
+        return new static();
     }
 
-    public function __construct($dbname, $host = 'localhost', $options = array()) {
-        $this->_dbname = $dbname;
-        $this->_host = $host;
-        $this->setOptions($options);
+    public function __construct() {
     }
 
-    public function setOptions($options) {
-        $this->_options = array();
-        foreach ($options as $key => $value) {
-            $this->_options['user'] = $key;
-            $this->_options['password'] = $value;
-            return $this;
-        }
-    }
-
-    public function connect() {
-        $this->_database = new \mysqli($this->_host, $this->_options['user'], $this->_options['password'], $this->_dbname);
+    public function connect($databasename, $hostname, $username, $password) {
+        $this->_database = new \mysqli($hostname, $username, $password, $databasename);
         $this->_database->set_charset("utf8");
         return $this;
     }
