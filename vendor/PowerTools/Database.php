@@ -5,13 +5,10 @@ namespace PowerTools;
 class Database {
 
     protected $_query;
-    protected $_database;
+    public $_database;
 
     public static function factory() {
         return new static();
-    }
-
-    public function __construct() {
     }
 
     public function connect($databasename, $hostname, $username, $password) {
