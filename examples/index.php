@@ -37,7 +37,7 @@ require LOCAL_PATH_BOOTSTRAP . DIRECTORY_SEPARATOR . 'bootstrap.php';
                         define("DBUSER", "root");    // The database username. 
                         define("DBPASS", "root");    // The database password. 
 
-                        $database = Database::factory(DB, DBHOST, array(DBUSER => DBPASS))->connect();
+                        $database = Database::factory()->connect(DB, DBHOST, DBUSER, DBPASS);
                         
                         
                         if ($data = $database
