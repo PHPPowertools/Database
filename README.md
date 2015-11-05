@@ -12,7 +12,7 @@ The purpose of this component is to provide a simple, lightweight, intuitive, ch
 
 ```php
 // Connect with your database
-$database = Database::factory(DB, DBHOST, array(DBUSER => DBPASS))->connect();
+$database = Database::factory()->connect(DB, DBHOST, DBUSER, DBPASS);
 
 // Select all rows from the `contact` table
 if ($data = $database->select()->from('contact')->execute()) {
