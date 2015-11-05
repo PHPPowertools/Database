@@ -27,7 +27,8 @@ if ($data = $database->select()->from('user')->order('firstname')->execute()) {
 // Get the number of records found in the `person` table
 if ($data = $database
                   ->select(['numberofpersons' => ['count' => '*']])
-                  ->from('person')->execute()) {
+                  ->from('person')
+                  ->execute()) {
     var_dump($data);
 }
 
