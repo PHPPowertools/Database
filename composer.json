@@ -14,10 +14,10 @@
     "require": {
         "php": ">=5.4.0"
     },
-    "target-dir": "PowerTools/Database",
+    "target-dir": "PowerTools",
     "autoload": {
         "psr-0": {
-            "PowerTools\\Database": "vendor/PowerTools/Database"
+            "PowerTools\\": "vendor/PowerTools/"
         }
     },
     "extra": {
