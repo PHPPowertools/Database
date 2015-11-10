@@ -1,0 +1,28 @@
+{
+    "name": "powertools/database",
+    "type": "library",
+    "description": "PHP PowerTools Database Component",
+    "homepage": "https://github.com/PHPPowertools/Database",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John Slegers",
+            "email": "slegersjohn@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "target-dir": "PowerTools/Database",
+    "autoload": {
+        "psr-0": {
+            "PowerTools\\Database": "vendor/PowerTools/Database"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
