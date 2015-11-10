@@ -11,6 +11,8 @@ The purpose of this component is to provide a simple, lightweight, intuitive, ch
 ##### Basic queries :
 
 ```php
+use \PowerTools\Database as Database;
+
 // Connect with your database
 $database = Database::factory()->connect(DB, DBHOST, DBUSER, DBPASS);
 
