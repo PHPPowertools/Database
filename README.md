@@ -1,6 +1,6 @@
 # Database Component
 
-***[PHPPowertools](https://github.com/PHPPowertools)*** is a web application framework for PHP > 5.3.
+***[PHPPowertools](https://github.com/PHPPowertools)*** is a web application framework for PHP > 5.4.
 
 ***[PHPPowertools/Database](https://github.com/PHPPowertools/DOM-Query)*** is the second component of ***PHPPowertools*** that has been released to the public.
 
