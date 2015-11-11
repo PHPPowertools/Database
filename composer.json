@@ -17,7 +17,7 @@
     "target-dir": "PowerTools/Database",
     "autoload": {
         "psr-0": {
-            "PowerTools\\": "vendor/PowerTools/"
+            "PowerTools\\": "src/PowerTools/"
         }
     },
     "extra": {
